@@ -15,7 +15,7 @@ def logger(path):
             date_time = datetime.datetime.now()
             func_name = old_function.__name__
             result = old_function(*args, **kwargs)
-            with open(path, 'w', encoding='utf-8') as f:
+            with open(path, 'w', encoding='utf-8') as f: #Обратите внимание, что файл открытый с параметром w перезаписывается полностью. Для дозаписи следует использовать параметр a.
                 f.write(f'Дата/время: {date_time}\n'
                         f'Имя функции: {func_name}\n'
                         f'Аргумент {args} - {kwargs}\n'
